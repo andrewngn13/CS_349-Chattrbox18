@@ -23,7 +23,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ws": "^1.0.1"
+    "ws": "^3.3.1"
   },
   "devDependencies": {
     "babel-cli": "^6.5.1",
