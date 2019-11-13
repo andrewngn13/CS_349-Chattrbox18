@@ -1,0 +1,1 @@
+babel app/scripts/src/app.js -o app/scripts/dist/main.js

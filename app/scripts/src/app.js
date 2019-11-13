@@ -1,8 +1,8 @@
-import socket from './ws-client';
-import {UserStore} from './storage';
-import {ChatForm, ChatList, promptForUsername} from './dom';
+import socket from "./ws-client";
+import {UserStore} from "./storage";
+import {ChatForm, ChatList, promptForUsername} from "./dom";
 
-let userStore = new UserStore('x-chattrbox/u');
+let userStore = new UserStore("x-chattrbox/u");
 
 class ChatApp {
   constructor() {
@@ -12,9 +12,9 @@ class ChatApp {
       userStore.set(this.username);
     }
 
-    this.chatForm = new ChatForm('#js-chat-form', '#js-message-input');
-    this.chatList = new ChatList('#js-message-list', this.username);
-    socket.init('ws://localhost:3001');
+    this.chatForm = new ChatForm("#js-chat-form", "#js-message-input");
+    this.chatList = new ChatList("#js-message-list", this.username);
+    socket.init("ws://localhost:3001");
     socket.registerOpenHandler(() => {
       this.chatForm.init((data) => {
         let message = new ChatMessage(data);
@@ -34,7 +34,7 @@ class ChatApp {
 
 class ChatMessage {
   constructor(data) {
-    if (typeof data === 'string') {
+    if (typeof data === "string") {
       data = {
         message: data
       };
